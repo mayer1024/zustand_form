@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { Form, Input } from "antd";
+import { Form, Input, Button } from "antd";
 import * as React from "react";
 
 const formCache = "basic";
@@ -7,9 +7,10 @@ const formCache = "basic";
 export const BasicForm = (props) => {
   return (
     <Form
-      name="global_state"
+      name={formCache}
       layout="inline"
       fields={props.values[formCache]}
+      scrollToFirstError
       onFieldsChange={(_, allFields) => {
         props.onChange(allFields, formCache);
       }}

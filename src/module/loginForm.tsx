@@ -4,13 +4,16 @@ import * as React from "react";
 
 const formCache = "login";
 export const LoginForm = React.memo((props) => {
+  const [form] = Form.useForm();
+
   return (
     <Form
       fields={props.values[formCache]}
+      form={form}
       onFieldsChange={(_, allFields) => {
         props.onChange(allFields, formCache);
       }}
-      name="global_state"
+      name="login"
       layout="inline"
     >
       <Form.Item
